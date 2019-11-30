@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+    // return view('welcome');
+// });
+
+Auth::routes();
+Route::group(['namespace'   => 'Frontend'], function () {
+    foreach (glob("../routes/frontend/*.route.php") as $filename) {
+        include $filename;
+    }
 });
