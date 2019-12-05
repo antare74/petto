@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- boostrap css --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {{-- google fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    {{-- material design icons --}}
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css">
 
     <title>@yield('title')Petto</title>
 </head>
@@ -12,6 +16,7 @@
 body{
     width: 100%;
     height: 100%;
+    font-family: 'Comfortaa', cursive;
 }
 </style>
 <body>
@@ -30,16 +35,20 @@ body{
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pet</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{{ url('/adoption/choose') }}">Adoption</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Pet Care</a>
+                </div>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/adoption/choose') }}">Adoption</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-
 
               {{-- if login show logout --}}
               @if (Auth::check())
@@ -81,7 +90,7 @@ body{
       <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Petto 2019</p>
       </div>
       <!-- /.container -->
     </footer>
